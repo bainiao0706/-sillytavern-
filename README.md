@@ -15,7 +15,7 @@
 本教程将教您如何使用 **Hugging Face Spaces** 提供的免费 Worker 算力，部署属于您自己的 **SillyTavern（酒馆）**。无需本地高级配置，随时随地通过浏览器畅玩。
 
 > [!NOTE]
-> 本教程及相关配置文件仅提供部署教程，仅保证可使用不保证稳定性与风险问题。
+> 本教程及相关配置文件仅提供部署教程，仅保证可使用不保证稳定性与风险问题，也同时不保证酒馆内数据是否会丢失，建议每聊天1小时或者每次下线时导出聊天文件备份。
 
 ---
 
@@ -42,7 +42,7 @@
 ### 🛠️ 前期准备
 1. 拥有一个 [Hugging Face](https://huggingface.co/) 账号（需完成基础的邮箱验证）。
 2. 下载仓库中的**Dockerfile**文件于本地。
-3. 本地创建一个**READER.md**文件，并将下方代码复制到其中保存
+3. 本地创建一个**READER.md**文件，并将下方代码复制到其中保存。
 
 ```yaml
 ---
@@ -54,6 +54,15 @@ sdk: docker
 app_port: 7860
 storage_spaces:
   - /app/data
+---
+```
+
+5.酒馆默认开启了白名单与用户名认证，默认用户密码为下面，也可以自行在dockerfile中修改
+```yaml
+---
+basicAuthUser:\n\
+  username: \"root\"\n\
+  password: \"admin\"\n\
 ---
 ```
 
@@ -70,15 +79,29 @@ storage_spaces:
 4.开启**Storage Bucket**，其余内容默认不用管
 <img width="1158" height="888" alt="image" src="https://github.com/user-attachments/assets/006bb43f-7f80-4f11-8374-56dace371183" />
 
-5.滑到最下方点击**Create Space**
-6.创建好后进入Space空间
+5.滑到最下方点击**Create Space**。
+
+6.创建好后进入Space空间，点击右上角Files，进入后点击原有README.md并删除原有README.md。
+<img width="2736" height="1543" alt="image" src="https://github.com/user-attachments/assets/e8f0a61f-f04e-477d-a7c6-c23f4dce014c" />
+
+7.点击右上角Contribute，点击Upload files，上传**本仓库中的Dockerfile与本地创建的README.md文件**至Files中。
+<img width="2736" height="1543" alt="image" src="https://github.com/user-attachments/assets/761094f8-e622-4235-8026-881df7ed625a" />
+
+8.返回App页面，等待其部署完成，一般15秒左右就部署完成了。
+<img width="2736" height="1543" alt="image" src="https://github.com/user-attachments/assets/b009a570-c243-430b-a845-80f87d53d18a" />
+
+9.部署完成后会出现酒馆的用户密码登录框就是成功啦，复制用户密码提示框上面的链接地址，后面游玩就直接访问那个网址即可。
+<img width="585" height="468" alt="image" src="https://github.com/user-attachments/assets/223aadba-f7ab-4848-bb37-39644cc47dcd" />
 
 ---
 
 ## ⚙️ 常见问题 (FAQ)
-
 > [!TIP]
-> **Q: 空间休眠了怎么办？**
-> A: 免费的 Space 在长时间无连接后会自动进入休眠状态，只需重新访问该页面触发唤醒即可，数据通常已做持久化保存。
+> **Q.** 为什么无法连接到用户密码提示框上的链接地址?
+> **A.** 挂梯子，默认直连可能会被墙掉。
+> **Q.** 为什么访问酒馆初始化这么久？
+> **A.** 初始化慢是正常的。
+> **Q.** 我下线后重新访问怎么只提示一个抱抱脸啊
+> **A.** 实例被封掉了，抱抱脸使用规则中有一条是免费worker实例如果悠异常api流量会被检测并封掉，这种时候直接删掉这个实例重新开一个就行了。
 
 ---
