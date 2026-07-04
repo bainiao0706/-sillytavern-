@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Hugging%20Face-Spaces-yellow?style=for-the-badge&logo=huggingface" alt="Hugging Face">
   <img src="https://img.shields.io/badge/SillyTavern-Cloud%20Deploy-blue?style=for-the-badge&logo=renpy" alt="SillyTavern">
-  <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-red?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
 ---
@@ -29,9 +29,9 @@
 <br />
 
 1. **用途限定**：本仓库所涉及的一切技术、代码及相关工具，**仅供个人学习、技术研究与交流使用**。严禁将本仓库内容用于任何商业用途、非法获利，或任何违反所在国家/地区法律法规的活动。
-2. **免责担保**：因使用或无法使用本仓库代码而导致的任何直接或间接损失（包括但不限于数据丢失、平台封号、法律纠纷等），**作者均不承担任何形式的法律责任**。
+2. **免责担保**：本软件/教程按“原样”提供，不包含任何形式的明示或暗示担保。在任何情况下，作者均不对因使用本仓库代码而引起的任何索赔、损害或其他责任（包括但不限于数据丢失、平台封号、法律纠纷等）承担责任。
 3. **平台合规**：请严格遵守 Hugging Face 的社区服务条款。若因滥用免费算力导致账号被封禁，一切后果由**使用者自行承担**。
-4. **版权说明**：本项目采用 **CC BY-NC 4.0 (署名-非商业性使用 4.0 国际)** 许可协议。谢绝任何形式的商业化倒卖与打包行为。
+4. **许可与授权**：本项目基于 **MIT 许可证** 开源。这意味着您可以自由地使用、修改和分发代码，但必须在所有副本中包含原始的版权声明和许可声明。
 
 </details>
 
